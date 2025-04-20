@@ -1,5 +1,6 @@
 
 from flask import Flask, request, send_file, jsonify
+from flask_cors import CORS
 from docx import Document
 from docx.shared import Pt
 import io
@@ -7,6 +8,7 @@ import os
 from datetime import datetime
 
 app = Flask(__name__)
+CORS(app)  # ⬅️ Povolíme CORS pro všechny domény
 
 def format_date(date_str):
     try:
